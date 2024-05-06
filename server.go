@@ -16,7 +16,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		Author: "rochitsen",
 	}
 
-	output, err := json.Marshal(d)
+	output, err := json.MarshalIndent(d, "", "\t")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
