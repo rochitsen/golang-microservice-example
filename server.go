@@ -17,7 +17,12 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	output, err := json.Marshal(d)
-
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}	
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(output)	
 }
 
 type demo struct {
