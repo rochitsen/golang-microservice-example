@@ -20,9 +20,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
-	}	
-	w.Header().Set("Content-Type", "application/json")
-	w.Write(output)	
+	}
+
+	w.Write(output)
 }
 
 type demo struct {
