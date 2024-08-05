@@ -1,0 +1,7 @@
+name: golang-microservice-example
+runtime: go
+description: Infra setup for Golang service
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-go
